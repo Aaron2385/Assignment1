@@ -33,6 +33,7 @@ public class DishAdapter extends RecyclerView.Adapter<DishAdapter.DishViewHolder
     @Override
     public void onBindViewHolder(@NonNull DishViewHolder holder, int position) {
         Dish dish = dishes.get(position);
+        holder.tvID.setText("Dish ID: " + dish.getId());
         holder.tvName.setText("Name: " + dish.getName());
         holder.tvType.setText("Type: " + dish.getType());
         holder.tvPrice.setText("Price: $" + dish.getPrice());
@@ -45,10 +46,11 @@ public class DishAdapter extends RecyclerView.Adapter<DishAdapter.DishViewHolder
     }
 
     public static class DishViewHolder extends RecyclerView.ViewHolder {
-        TextView tvName, tvType, tvPrice, tvIngredients;  // Add tvIngredients
+        TextView tvID, tvName, tvType, tvPrice, tvIngredients;  // Add tvIngredients
 
         public DishViewHolder(@NonNull View itemView) {
             super(itemView);
+            tvID = itemView.findViewById(R.id.tv_dish_id);
             tvName = itemView.findViewById(R.id.tv_dish_name);
             tvType = itemView.findViewById(R.id.tv_dish_type);
             tvPrice = itemView.findViewById(R.id.tv_dish_price);

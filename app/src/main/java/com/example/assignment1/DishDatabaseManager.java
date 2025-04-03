@@ -39,6 +39,7 @@ public class DishDatabaseManager {
 
     public void updateDish(int id, String name, String type, String ingredients, double price, String imageLink) {
         ContentValues dish = new ContentValues();
+        dish.put("ID", id);
         dish.put("name", name);
         dish.put("type", type);
         dish.put("ingredients", ingredients);
